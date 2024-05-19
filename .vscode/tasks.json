@@ -9,7 +9,7 @@
                 "build",
                 "-c",
                 "Debug",
-                "${workspaceFolder}/ModTemplate/ModTemplate.csproj"
+                "${workspaceFolder}/StabilitySpawnLib/StabilitySpawnLib.csproj"
             ],
             "problemMatcher": "$msCompile"
         },
