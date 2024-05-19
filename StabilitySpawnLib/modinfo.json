@@ -1,7 +1,7 @@
 {
     "type": "code",
     "modid": "stabilityspawnlib",
-    "name": "Stability Spawn Lib",
+    "name": "StabilitySpawnLib",
     "authors": [
         "Zach2039"
     ],
@@ -9,5 +9,8 @@
     "version": "1.0.0",
     "dependencies": {
         "game": "*"
-    }
+    },
+    "Side": "Server",
+	"RequiredOnClient": false,
+	"RequiredOnServer": true
 }
