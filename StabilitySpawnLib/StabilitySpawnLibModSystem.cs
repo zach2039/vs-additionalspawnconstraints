@@ -15,7 +15,7 @@ namespace StabilitySpawnLib
 			if (!Harmony.HasAnyPatches(Mod.Info.ModID)) {
 				harmony = new Harmony(Mod.Info.ModID);
 
-                var original = typeof(ServerSystemEntitySpawner).GetMethod("CanSpawnAt", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+                var original = typeof(ServerSystemEntitySpawner).GetMethod("CanSpawnAt", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
                 var prefix = typeof(Patch_ServerSystemEntitySpawner_CanSpawnAt).GetMethod("Prefix", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
                 
                 harmony.Patch(original, new HarmonyMethod(prefix), null);			
