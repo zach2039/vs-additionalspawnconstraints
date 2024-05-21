@@ -1,7 +1,7 @@
 {
     "type": "code",
     "modid": "spawnlib",
-    "name": "SpawnLib",
+    "name": "AdditionalSpawnConstraints",
     "authors": [
         "Zach2039"
     ],

@@ -6,7 +6,7 @@ A server-side dependency mod that allows JSON mods and patching to control vario
 Overview
 --------
 
-SpawnLib will look for a `spawnLib` object inside an entity's `/attributes` object. This can be included on new entity JSON files, or patched in via JSON.
+AdditionalSpawnConstraints will look for a `spawnLib` object inside an entity's `/attributes` object. This can be included on new entity JSON files, or patched in via JSON.
 
 An example for some properties is below, applied via a patch to `drifter.json`:
 

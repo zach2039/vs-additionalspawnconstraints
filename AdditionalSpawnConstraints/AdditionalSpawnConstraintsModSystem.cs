@@ -1,6 +1,6 @@
 ﻿using Vintagestory.API.Common;
 using Vintagestory.API.Server;
-using SpawnLib.ModPatches;
+using AdditionalSpawnConstraints.ModPatches;
 using HarmonyLib;
 using Vintagestory.Server;
 using Vintagestory.ServerMods;
@@ -9,9 +9,9 @@ using Vintagestory.GameContent;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Util;
 
-namespace SpawnLib
+namespace AdditionalSpawnConstraints
 {
-	public class SpawnLibModSystem : ModSystem
+	public class AdditionalSpawnConstraintsModSystem : ModSystem
 	{
 		public Harmony harmonyInst;
 
@@ -22,7 +22,7 @@ namespace SpawnLib
 				
 			harmony.Patch(original, new HarmonyMethod(prefix), null);			
 
-			sapi.Logger.Notification("Applied patch to VintageStory's GenCreatures.CanSpawnAtConditions from SpawnLib!");		
+			sapi.Logger.Notification("Applied patch to VintageStory's GenCreatures.CanSpawnAtConditions from AdditionalSpawnConstraints!");		
 		}
 
 		internal void PatchServerSystemEntitySpawnerCanSpawnAt(ICoreServerAPI sapi, Harmony harmony)
@@ -32,7 +32,7 @@ namespace SpawnLib
 				
 			harmony.Patch(original, new HarmonyMethod(prefix), null);			
 
-			sapi.Logger.Notification("Applied patch to VintageStory's ServerSystemEntitySpawner.CanSpawnAt from SpawnLib!");		
+			sapi.Logger.Notification("Applied patch to VintageStory's ServerSystemEntitySpawner.CanSpawnAt from AdditionalSpawnConstraints!");		
 		}
 
 		internal void PatchBlockCanCreatureSpawnOn(ICoreServerAPI sapi, Harmony harmony)
@@ -42,7 +42,7 @@ namespace SpawnLib
 				
 			harmony.Patch(original, null, new HarmonyMethod(postfix));			
 
-			sapi.Logger.Notification("Applied patch to VintageStory's Block.CanCreatureSpawnOn from SpawnLib!");		
+			sapi.Logger.Notification("Applied patch to VintageStory's Block.CanCreatureSpawnOn from AdditionalSpawnConstraints!");		
 		}
 
 		public override void StartServerSide(ICoreServerAPI sapi)
@@ -59,7 +59,7 @@ namespace SpawnLib
 
 			base.StartServerSide(sapi);
 
-			sapi.Logger.Notification("Loaded SpawnLib!");
+			sapi.Logger.Notification("Loaded AdditionalSpawnConstraints!");
 		}
 
 		/// <summary>
