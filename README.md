@@ -6,7 +6,7 @@ A server-side dependency mod that allows JSON mods and patching to control vario
 Overview
 --------
 
-SpawnLib will look for a `spawnLib` object inside an entity's `/server/attributes` object. This can be included on new entity JSON files, or patched in via JSON.
+SpawnLib will look for a `spawnLib` object inside an entity's `/attributes` object. This can be included on new entity JSON files, or patched in via JSON.
 
 An example for some properties is below, applied via a patch to `drifter.json`:
 
@@ -16,7 +16,7 @@ An example for some properties is below, applied via a patch to `drifter.json`:
 		"side": "Server",
 		"file": "game:entities/land/drifer.json",
 		"op": "addmerge",
-		"path": "/server/attributes/spawnLib",
+		"path": "/attributes/spawnLib",
 		"value": {
 			"minRegionStability":0.0,
 			"maxRegionStability":1.5,
