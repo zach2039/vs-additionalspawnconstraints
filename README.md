@@ -54,7 +54,7 @@ The properties that can be set within `spawnLib` are:
 Future Plans
 --------
 
- - None, atm.
+ - Properties related to health scaling on spawn.
 
 Known Issues
 --------
