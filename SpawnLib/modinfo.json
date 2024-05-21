@@ -1,0 +1,19 @@
+{
+    "type": "code",
+    "modid": "spawnlib",
+    "name": "SpawnLib",
+    "authors": [
+        "Zach2039"
+    ],
+    "contributors": [
+        "Thalius"
+    ],
+    "description": "A server-side dependency mod that allows JSON mods and patching to control various spawn conditions; does nothing on its own!",
+    "version": "1.0.0",
+    "dependencies": {
+        "game": "*"
+    },
+    "Side": "Server",
+	"RequiredOnClient": false,
+	"RequiredOnServer": true
+}

@@ -24,7 +24,7 @@ public static class Program
 
 public class BuildContext : FrostingContext
 {
-    public const string ProjectName = "StabilitySpawnLib";
+    public const string ProjectName = "SpawnLib";
     public string BuildConfiguration { get; set; }
     public string Version { get; }
     public string Name { get; }

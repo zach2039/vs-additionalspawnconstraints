@@ -1,5 +1,5 @@
 {
-  "dotnet.defaultSolution": "StabilitySpawnLib.sln",
+  "dotnet.defaultSolution": "SpawnLib.sln",
   "files.associations": {
     "server-*.txt": "log",
     "client-*.txt": "log"

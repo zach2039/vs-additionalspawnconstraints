@@ -21,7 +21,7 @@
                 // "--openWorld" , "modding test world",
                 "--tracelog",
                 "--addModPath",
-                "${workspaceFolder}/StabilitySpawnLib/bin/Debug/Mods"
+                "${workspaceFolder}/SpawnLib/bin/Debug/Mods"
             ],
             "console": "internalConsole",
             "stopAtEntry": false
@@ -41,7 +41,7 @@
             "args": [
                 "--tracelog",
                 "--addModPath",
-                "${workspaceFolder}/StabilitySpawnLib/bin/Debug/Mods"
+                "${workspaceFolder}/SpawnLib/bin/Debug/Mods"
             ],
             "console": "internalConsole",
             "stopAtEntry": false

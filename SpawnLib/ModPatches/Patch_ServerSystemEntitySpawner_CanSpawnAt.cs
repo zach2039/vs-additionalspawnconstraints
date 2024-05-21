@@ -5,9 +5,9 @@ using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
 using Vintagestory.Server;
 
-namespace StabilitySpawnLib.ModPatches
+namespace SpawnLib.ModPatches
 {
-	[HarmonyPatchCategory("StabilitySpawnLib_ServerSystemEntitySpawner")]
+	[HarmonyPatchCategory("SpawnLib_ServerSystemEntitySpawner")]
 	[HarmonyPatch(typeof(ServerSystemEntitySpawner), "CanSpawnAt")]
 	public class Patch_ServerSystemEntitySpawner_CanSpawnAt
 	{
