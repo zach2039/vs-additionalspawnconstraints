@@ -60,3 +60,8 @@ Known Issues
 --------
 
  - None, atm.
+
+Extras
+--------
+
+ - Thanks to Thalius for testing help.
