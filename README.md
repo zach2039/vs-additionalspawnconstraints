@@ -62,6 +62,11 @@ Known Issues
 
  - None, atm.
 
+Mods That Use This
+--------
+
+ - [Natural Spawns](https://mods.vintagestory.at/naturalspawns) : Limits drifters to spawning on soil and other natural blocks, even during storms.
+
 Extras
 --------
 
