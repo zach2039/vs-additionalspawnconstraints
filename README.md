@@ -14,7 +14,7 @@ An example for some properties is below, applied via a patch to `drifter.json`:
 [
 	{
 		"side": "Server",
-		"file": "game:entities/land/drifer.json",
+		"file": "game:entities/land/drifter.json",
 		"op": "addmerge",
 		"path": "/attributes/additionalSpawnConstraints",
 		"value": {

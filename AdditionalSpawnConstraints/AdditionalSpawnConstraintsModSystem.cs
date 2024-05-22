@@ -72,7 +72,7 @@ namespace AdditionalSpawnConstraints
 		/// <returns>whether or not to skip the original method</returns>
 		public static bool CheckSpawnAt(ICoreServerAPI sapi, BlockPos blockPos, EntityProperties type, ref bool result)
 		{
-			if (type.Attributes == null || !type.Attributes.KeyExists("spawnLib"))
+			if (type.Attributes == null || !type.Attributes.KeyExists("additionalSpawnConstraints"))
 			{
 				return true; // continue with original method
 			}
@@ -118,21 +118,21 @@ namespace AdditionalSpawnConstraints
 
 		public static void CanSpawnOn(IBlockAccessor blockAccessor, BlockPos blockPos, EntityProperties type, ref bool result)
 		{
-			if (type.Attributes == null || !type.Attributes.KeyExists("spawnLib"))
+			if (type.Attributes == null || !type.Attributes.KeyExists("additionalSpawnConstraints"))
 			{
 				return;
 			}
 
-			if (!type.Attributes.KeyExists("canSpawnOn") && !type.Attributes.KeyExists("cannotSpawnOn"))
+			if (!type.Attributes["additionalSpawnConstraints"].KeyExists("canSpawnOn") && !type.Attributes["additionalSpawnConstraints"].KeyExists("cannotSpawnOn"))
 			{
 				return;
 			}
 
-			if (type.Attributes.KeyExists("cannotSpawnOn"))
+			if (type.Attributes["additionalSpawnConstraints"].KeyExists("cannotSpawnOn"))
 			{
 				Block block = blockAccessor.GetBlock(blockPos);
 				bool foundMatch = false;
-				foreach (string blockCodeSearch in type.Attributes.AsArray<string>())
+				foreach (string blockCodeSearch in type.Attributes["additionalSpawnConstraints"]["canSpawnOn"].AsArray<string>())
 				{
 					if (WildcardUtil.Match(blockCodeSearch, block.Code.ToString()))
 					{
@@ -148,11 +148,11 @@ namespace AdditionalSpawnConstraints
 				}
 			}
 
-			if (type.Attributes.KeyExists("canSpawnOn"))
+			if (type.Attributes["additionalSpawnConstraints"].KeyExists("canSpawnOn"))
 			{
 				Block block = blockAccessor.GetBlock(blockPos);
 				bool foundMatch = false;
-				foreach (string blockCodeSearch in type.Attributes.AsArray<string>())
+				foreach (string blockCodeSearch in type.Attributes["additionalSpawnConstraints"]["canSpawnOn"].AsArray<string>())
 				{
 					if (WildcardUtil.Match(blockCodeSearch, block.Code.ToString()))
 					{
