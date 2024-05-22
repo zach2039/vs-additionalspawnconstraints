@@ -45,6 +45,16 @@ namespace AdditionalSpawnConstraints
 			sapi.Logger.Notification("Applied patch to VintageStory's Block.CanCreatureSpawnOn from AdditionalSpawnConstraints!");		
 		}
 
+		internal void PatchSystemTemporalStabilityDoSpawn(ICoreServerAPI sapi, Harmony harmony)
+		{
+			var original = typeof(SystemTemporalStability).GetMethod("DoSpawn", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+			var prefix = typeof(Patch_SystemTemporalStability_DoSpawn).GetMethod("Prefix", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
+				
+			harmony.Patch(original, new HarmonyMethod(prefix));			
+
+			sapi.Logger.Notification("Applied patch to VintageStory's SystemTemporalStability.DoSpawn from AdditionalSpawnConstraints!");		
+		}
+
 		public override void StartServerSide(ICoreServerAPI sapi)
 		{
 			if (!Harmony.HasAnyPatches(Mod.Info.ModID)) {
@@ -55,6 +65,8 @@ namespace AdditionalSpawnConstraints
 				PatchBlockCanCreatureSpawnOn(sapi, harmonyInst);
 
 				PatchGenCreaturesCanSpawnAtConditions(sapi, harmonyInst);
+
+				PatchSystemTemporalStabilityDoSpawn(sapi, harmonyInst);
 			}
 
 			base.StartServerSide(sapi);
@@ -131,6 +143,23 @@ namespace AdditionalSpawnConstraints
 			if (type.Attributes["additionalSpawnConstraints"].KeyExists("cannotSpawnOn"))
 			{
 				Block block = blockAccessor.GetBlock(blockPos);
+
+				// In some instances, the target block can be air, so we need to check the block below
+				if (block.BlockMaterial is EnumBlockMaterial.Air)
+				{
+					int searchDistance = 1;
+					BlockPos downPos = blockPos.Copy();
+					while (searchDistance < 16)
+					{
+						block = blockAccessor.GetMostSolidBlock(downPos.Down());
+						if (block.BlockMaterial is not EnumBlockMaterial.Air && blockAccessor.IsSideSolid(downPos.X, downPos.Y, downPos.Z, BlockFacing.UP))
+						{
+							break;
+						}
+						searchDistance++;
+					}
+				}
+
 				bool foundMatch = false;
 				foreach (string blockCodeSearch in type.Attributes["additionalSpawnConstraints"]["canSpawnOn"].AsArray<string>())
 				{
@@ -151,6 +180,23 @@ namespace AdditionalSpawnConstraints
 			if (type.Attributes["additionalSpawnConstraints"].KeyExists("canSpawnOn"))
 			{
 				Block block = blockAccessor.GetBlock(blockPos);
+
+				// In some instances, the target block can be air, so we need to check the block below
+				if (block.BlockMaterial is EnumBlockMaterial.Air)
+				{
+					int searchDistance = 1;
+					BlockPos downPos = blockPos.Copy();
+					while (searchDistance < 16)
+					{
+						block = blockAccessor.GetMostSolidBlock(downPos.Down());
+						if (block.BlockMaterial is not EnumBlockMaterial.Air && blockAccessor.IsSideSolid(downPos.X, downPos.Y, downPos.Z, BlockFacing.UP))
+						{
+							break;
+						}
+						searchDistance++;
+					}
+				}
+
 				bool foundMatch = false;
 				foreach (string blockCodeSearch in type.Attributes["additionalSpawnConstraints"]["canSpawnOn"].AsArray<string>())
 				{

@@ -18,8 +18,7 @@ An example for some properties is below, applied via a patch to `drifter.json`:
 		"op": "addmerge",
 		"path": "/attributes/additionalSpawnConstraints",
 		"value": {
-			"minRegionStability":0.0,
-			"maxRegionStability":1.5,
+			"changeTemporalStormSpawnMechanics": true,
 			"canSpawnOn":[
 				"game:sand-*",
 				"game:gravel-*",
@@ -50,6 +49,8 @@ The properties that can be set within `spawnLib` are:
 - `"canSpawnOn"` : A list of block codes that are valid for spawning the entity on; supports globs and regex to handle variants.
 
 - `"cannotSpawnOn"` : A list of block codes that are not valid for spawning the entity on; supports globs and regex to handle variants.
+
+- `"changeTemporalStormSpawnMechanics"` : Determines if other properties can affect temporal storm spawning, where applicable; default is `false` if unspecified. Does not apply to `"minRegionStability"` or `"maxRegionStability"`. Only affects entities that are spawned during stor
 
 Future Plans
 --------
