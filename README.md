@@ -40,7 +40,7 @@ An example for some properties is below, applied via a patch to `drifter.json`:
 ]
 ```
 
-The properties that can be set within `spawnLib` are:
+The properties that can be set within `additionalSpawnConstraints` are:
 
 - `"minRegionStability"` : The minimum region stablity required when spawning the entity; does not take into account rifts nor rift proximity.
 
@@ -50,7 +50,7 @@ The properties that can be set within `spawnLib` are:
 
 - `"cannotSpawnOn"` : A list of block codes that are not valid for spawning the entity on; supports globs and regex to handle variants.
 
-- `"changeTemporalStormSpawnMechanics"` : Determines if other properties can affect temporal storm spawning, where applicable; default is `false` if unspecified. Does not apply to `"minRegionStability"` or `"maxRegionStability"`. Only affects entities that are spawned during stor
+- `"changeTemporalStormSpawnMechanics"` : Determines if other properties can affect temporal storm spawning, where applicable; default is `false` if unspecified. Does not apply to `"minRegionStability"` or `"maxRegionStability"`. Only affects entities that are spawned during storms.
 
 Future Plans
 --------
