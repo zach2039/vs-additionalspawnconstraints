@@ -89,7 +89,7 @@ namespace AdditionalSpawnConstraints
 				return true; // continue with original method
 			}
 
-			if (!type.Attributes.KeyExists("minSpawnRegionStability") && !type.Attributes.KeyExists("maxSpawnRegionStability"))
+			if (!type.Attributes["additionalSpawnConstraints"].KeyExists("minSpawnRegionStability") && !type.Attributes["additionalSpawnConstraints"].KeyExists("maxSpawnRegionStability"))
 			{
 				return true; // continue with original method
 			}
@@ -105,9 +105,9 @@ namespace AdditionalSpawnConstraints
 			double hereStability = tempStabilitySystem.GetTemporalStability(tmpPos);
 
 			// Stability can range from 0.0f to 2.0f, I think
-			if (type.Attributes.KeyExists("minSpawnRegionStability"))
+			if (type.Attributes["additionalSpawnConstraints"].KeyExists("minSpawnRegionStability"))
 			{
-				double minStability = type.Attributes["minSpawnRegionStability"].AsDouble(0.0f);
+				double minStability = type.Attributes["additionalSpawnConstraints"]["minSpawnRegionStability"].AsDouble(0.0f);
 				if (hereStability < minStability)
 				{
 					result = false;
@@ -115,9 +115,9 @@ namespace AdditionalSpawnConstraints
 				}
 			}
 
-			if (type.Attributes.KeyExists("maxSpawnRegionStability"))
+			if (type.Attributes["additionalSpawnConstraints"].KeyExists("maxSpawnRegionStability"))
 			{
-				double maxStability = type.Attributes["maxSpawnRegionStability"].AsDouble(0.0f);
+				double maxStability = type.Attributes["additionalSpawnConstraints"]["maxSpawnRegionStability"].AsDouble(0.0f);
 				if (hereStability > maxStability)
 				{
 					result = false;
