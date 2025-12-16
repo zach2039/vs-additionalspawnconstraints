@@ -8,7 +8,7 @@ using Vintagestory.Server;
 
 namespace AdditionalSpawnConstraints.ModPatches
 {
-	[HarmonyPatch(typeof(ServerSystemEntitySpawner), "CanSpawnAt")]
+	[HarmonyPatch(typeof(ServerSystemEntitySpawner), "CanSpawnAt_offthread")]
 	public class Patch_ServerSystemEntitySpawner_CanSpawnAt
 	{
 		static bool Prefix(ServerSystemEntitySpawner __instance, ref Vec3d __result, EntityProperties type, Vec3i spawnPosition, RuntimeSpawnConditions sc, IWorldChunk[] chunkCol, ref ServerMain ___server)
