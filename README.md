@@ -70,4 +70,5 @@ Mods That Use This
 Extras
 --------
 
+ - Thanks to ClementColmerauer for patch crash fix.
  - Thanks to Thalius for testing help.
