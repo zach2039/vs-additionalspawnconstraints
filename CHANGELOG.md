@@ -1,6 +1,6 @@
-### v1.26.x-1.1.0
+### v1.21.x-1.1.0
 
-- Update to VS-v1.26.6
+- Update to VS-v1.21.6
 - Fix crash due to patch not landing (Thanks to ClementColmerauer!)
 
 ### v1.19.x-1.0.1
