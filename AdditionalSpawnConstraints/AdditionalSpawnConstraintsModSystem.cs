@@ -161,7 +161,7 @@ namespace AdditionalSpawnConstraints
 				}
 
 				bool foundMatch = false;
-				foreach (string blockCodeSearch in type.Attributes["additionalSpawnConstraints"]["canSpawnOn"].AsArray<string>())
+				foreach (string blockCodeSearch in type.Attributes["additionalSpawnConstraints"]["cannotSpawnOn"].AsArray<string>())
 				{
 					if (WildcardUtil.Match(blockCodeSearch, block.Code.ToString()))
 					{

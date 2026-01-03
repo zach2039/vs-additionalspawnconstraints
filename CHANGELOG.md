@@ -1,3 +1,7 @@
+### v1.21.x-1.1.1
+
+- Fix incorrect logic in `cannotSpawn` processing
+
 ### v1.21.x-1.1.0
 
 - Update to VS-v1.21.6

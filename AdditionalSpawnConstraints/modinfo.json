@@ -10,7 +10,7 @@
         "ClementColmerauer"
     ],
     "description": "A server-side dependency mod that allows JSON mods and patching to control various spawn conditions; does nothing on its own!",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "dependencies": {
         "game": "*"
     },
